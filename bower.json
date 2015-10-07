@@ -1,22 +1,19 @@
 {
   "name": "cordova-battery",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Adrian de la Rosa <adrian@delarosab.me>"
   ],
-  "description": "An element providing a solution to no problem in particular.",
+  "description": "An element providing access to battery status for cordova applications.",
   "keywords": [
     "web-component",
     "polymer",
-    "seed"
+    "cordova",
+    "battery"
   ],
   "main": "cordova-battery.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/seed-element/",
-  "ignore": [
-    "/.*",
-    "/test/"
-  ],
+  "license": "https://raw.githubusercontent.com/adelarosab/cordova-battery/master/LICENSE",
+  "homepage": "https://github.com/adelarosab/cordova-battery/",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1.0"
   },
