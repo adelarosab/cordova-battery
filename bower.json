@@ -7,6 +7,7 @@
   "description": "An element providing access to battery status for cordova applications.",
   "keywords": [
     "web-component",
+    "web-components",
     "polymer",
     "cordova",
     "battery"

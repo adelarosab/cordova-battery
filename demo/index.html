@@ -1,15 +1,46 @@
 <!doctype html>
 <html>
   <head>
+    <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
+    <!-- TITLE -->
     <title>cordova-battery Demo</title>
 
+    <!-- COMPONENT -->
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/font-roboto/roboto.html">
     <link rel="import" href="../cordova-battery.html">
   </head>
   <body unresolved>
+    <style>
+      body {
+        font-family: Roboto, sans-serif;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    </style>
     <cordova-battery></cordova-battery>
+    <section>
+      <header>
+        <h1>Battery status</h1>
+      </header>
+      <main>
+        My battery level is <label class="level"></label>. And my charger is <label class="isPlugged"></label>.
+      </main>
+    </section>
+    <script>
+      var batteryEl = document.querySelector('cordova-battery');
+
+      batteryEl.addEventListener('level-changed', function() {
+        document.querySelector('.level').innerHTML = batteryEl.level;
+      });
+      batteryEl.addEventListener('is-plugged-changed', function() {
+        document.querySelector('.isPlugged').innerHTML = batteryEl.isPlugged;
+      });
+    </script>
   </body>
 </html>

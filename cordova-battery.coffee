@@ -2,21 +2,23 @@ Polymer
   is: "cordova-battery"
 
   properties:
+    ### A boolean that indicates whether the device is plugged in. ###
     isPlugged:
       readOnly: yes
       reflectToAttribute: yes
       type: Boolean
+    ### The percentage of battery charge (0-100). ###
     level:
       readOnly: yes
       reflectToAttribute: yes
       type: Number
 
-  _statusChanged: (info) ->
+  _onStatusChanged: (info) ->
     @_setIsPlugged info.isPlugged
     @_setLevel info.level
 
   attached: ->
-    window.addEventListener "batterystatus", (@_statusChanged.bind this), false
+    window.addEventListener "batterystatus", (@_onStatusChanged.bind this), false
     window.addEventListener "batterylow",
       (@fire.bind this, "cordova-battery-low", @level),
       false
@@ -25,6 +27,6 @@ Polymer
       false
 
   detached: ->
-    window.removeEventListener "batterystatus", @_batteryChanged
+    window.removeEventListener "batterystatus", @_onStatusChanged
     window.removeEventListener "batterylow", @fire
     window.removeEventListener "batterycritical", @fire

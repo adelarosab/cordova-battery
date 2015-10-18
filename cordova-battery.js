@@ -3,28 +3,32 @@
   Polymer({
     is: "cordova-battery",
     properties: {
+
+      /* A boolean that indicates whether the device is plugged in. */
       isPlugged: {
         readOnly: true,
         reflectToAttribute: true,
         type: Boolean
       },
+
+      /* The percentage of battery charge (0-100). */
       level: {
         readOnly: true,
         reflectToAttribute: true,
         type: Number
       }
     },
-    _statusChanged: function(info) {
+    _onStatusChanged: function(info) {
       this._setIsPlugged(info.isPlugged);
       return this._setLevel(info.level);
     },
     attached: function() {
-      window.addEventListener("batterystatus", this._statusChanged.bind(this), false);
+      window.addEventListener("batterystatus", this._onStatusChanged.bind(this), false);
       window.addEventListener("batterylow", this.fire.bind(this, "cordova-battery-low", this.level), false);
       return window.addEventListener("batterycritical", this.fire.bind(this, "cordova-battery-critical", this.level), false);
     },
     detached: function() {
-      window.removeEventListener("batterystatus", this._batteryChanged);
+      window.removeEventListener("batterystatus", this._onStatusChanged);
       window.removeEventListener("batterylow", this.fire);
       return window.removeEventListener("batterycritical", this.fire);
     }
