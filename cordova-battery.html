@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../cordova-core/cordova-core.html">
 <!--
 An element providing access to battery status for cordova applications.
 
@@ -10,5 +11,9 @@ Example:
 @element cordova-battery
 @demo demo/index.html
 -->
-<dom-module id="cordova-battery"></dom-module>
-<script src="cordova-battery.js"></script>
+<dom-module id="cordova-battery">
+  <template>
+    <cordova-core ready="{{ready}}"></cordova-core>
+  </template>
+  <script src="cordova-battery.js"></script>
+</dom-module>
