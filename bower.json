@@ -24,7 +24,7 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "^1.6.0",
+    "polymer": "^1.6.1",
     "cordova-core": "^1.1.5"
   },
   "devDependencies": {
