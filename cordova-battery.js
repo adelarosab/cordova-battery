@@ -34,25 +34,23 @@ Polymer(
     },
 
     _observeReady(ready) {
-      if (!ready) {
-        return;
+      if (ready) {
+        window.addEventListener(
+          'batterycritical',
+          this.fire.bind(this, 'cordova-battery-critical', this.level),
+          false
+        );
+        window.addEventListener(
+          'batterylow',
+          this.fire.bind(this, 'cordova-battery-low', this.level),
+          false
+        );
+        window.addEventListener(
+          'batterystatus',
+          this._onStatusChanged.bind(this),
+          false
+        );
       }
-
-      window.addEventListener(
-        'batterycritical',
-        this.fire.bind(this, 'cordova-battery-critical', this.level),
-        false
-      );
-      window.addEventListener(
-        'batterylow',
-        this.fire.bind(this, 'cordova-battery-low', this.level),
-        false
-      );
-      window.addEventListener(
-        'batterystatus',
-        this._onStatusChanged.bind(this),
-        false
-      );
     },
 
     _onStatusChanged(status) {
