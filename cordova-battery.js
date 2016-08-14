@@ -1,5 +1,3 @@
-'use strict';
-
 Polymer(
   {
     is: 'cordova-battery',
