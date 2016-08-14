@@ -11,8 +11,7 @@ Polymer(
       isPlugged: {
         notify: true,
         readOnly: true,
-        type: Boolean,
-        value: false
+        type: Boolean
       },
 
       /**
@@ -35,23 +34,25 @@ Polymer(
     },
 
     _observeReady(ready) {
-      if (ready) {
-        window.addEventListener(
-          'batterycritical',
-          this.fire.bind(this, 'cordova-batteory-critical', this.level),
-          false
-        );
-        window.addEventListener(
-          'batterylow',
-          this.fire.bind(this, 'cordova-batteory-low', this.level),
-          false
-        );
-        window.addEventListener(
-          'batterystatus',
-          this._onStatusChanged.bind(this),
-          false
-        );
+      if (!ready) {
+        return;
       }
+
+      window.addEventListener(
+        'batterycritical',
+        this.fire.bind(this, 'cordova-batteory-critical', this.level),
+        false
+      );
+      window.addEventListener(
+        'batterylow',
+        this.fire.bind(this, 'cordova-batteory-low', this.level),
+        false
+      );
+      window.addEventListener(
+        'batterystatus',
+        this._onStatusChanged.bind(this),
+        false
+      );
     },
 
     _onStatusChanged(status) {

@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "cordova-battery": "^1.1.2",
+    "cordova-battery": "^1.1.3",
     "iron-component-page": "^1.1.7"
   }
 }
