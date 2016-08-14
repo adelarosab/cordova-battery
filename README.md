@@ -1,10 +1,10 @@
 _[Demo and API docs](https://adelarosab.github.io/cordova-battery)_
-### Note:
+###### Note: 
 Due to restrictions `ready` attribute is not shown into attributes table.
 
 
 ## &lt;cordova-battery&gt;
-
+g
 `<cordova-battery>` provides information about the battery status.
 
 ```html
