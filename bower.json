@@ -1,0 +1,16 @@
+{
+  "name": "cordova-battery",
+  "homepage": "https://github.com/adelarosab/cordova-battery",
+  "authors": [
+    "Adrian de la Rosa <adrian@delarosab.me>"
+  ],
+  "description": "Demo of cordova-core",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cordova-battery": "^1.1.2",
+    "iron-component-page": "^1.1.7"
+  }
+}
