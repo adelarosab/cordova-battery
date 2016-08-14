@@ -27,8 +27,10 @@ Polymer(
        * Return if cordova deviceready event has been fired.
        */
       ready: {
+        computed: '_computeReady(_ready_, _paused_)',
         notify: true,
-        observer: "_observeReady",
+        observer: '_observeReady',
+        type: Boolean,
         value: false
       }
     },

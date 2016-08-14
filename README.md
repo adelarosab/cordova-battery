@@ -1,12 +1,11 @@
 _[Demo and API docs](https://adelarosab.github.io/cordova-battery)_
 
-## Note:
+### Note:
 Due to restrictions `ready` attribute is not shown into attributes table.
 
-## &lt;cordova-core&gt;
+## &lt;cordova-battery&gt;
 
-`<cordova-core>` implements a basic interface about cordova application battery 
-status.
+`<cordova-battery>` provides information about the battery status.
 
 ```html
 <cordova-battery
