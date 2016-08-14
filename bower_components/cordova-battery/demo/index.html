@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <!-- COMPONENT -->
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../cordova-battery.html">
+  </head>
+  <body unresolved>
+    <style>
+      .level,
+      .is-plugged {
+        border: 0;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        height: 50%;
+        left: 0;
+        position: fixed;
+        transition: background-color .25s ease-out, color .25s ease-out;
+        width: 100%;
+      }
+
+      .level[disabled],
+      .is-plugged[disabled] {
+        color: #222;
+        text-decoration: line-through;
+      }
+
+      .level {
+        background-color: #03a9f4;
+        color: #222;
+        top: 50%;
+      }
+
+      .level[disabled] {
+        background-color: #80d8ff;
+      }
+
+      .is-plugged {
+        background-color: #009688;
+        top: 0;
+      }
+
+      .is-plugged[disabled] {
+        background-color: #f44336;
+        color: #fff;
+      }
+    </style>
+
+    <cordova-battery></cordova-battery>
+
+    <button class="level" disabled>UNKOWN</button>
+    <button class="is-plugged" disabled>IS PLUGGED</button>
+
+    <script>
+      var batteryEl = document.querySelector('cordova-battery');
+      var isPluggedEl = document.querySelector('.is-plugged');
+      var levelEl = document.querySelector('.level');
+
+      batteryEl.addEventListener(
+        'level-changed', function () {
+          levelEl.innerHTML = batteryEl.level + '%';
+        }
+      );
+
+      batteryEl.addEventListener(
+        'is-plugged-changed', function (e) {
+          isPluggedEl.disabled = !e.detail.value;
+        }
+      );
+
+      batteryEl.addEventListener(
+        'ready-changed', function (e) {
+          levelEl.disabled = false;
+        }
+      );
+
+      isPluggedEl.disabled = !batteryEl.isPlugged;
+    </script>
+  </body>
+</html>

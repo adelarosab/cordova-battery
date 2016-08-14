@@ -1,0 +1,33 @@
+{
+  "name": "cordova-battery",
+  "version": "1.1.1",
+  "authors": [
+    "Adrian de la Rosa <adrian@delarosab.me>"
+  ],
+  "description": "An element providing access to battery status for cordova applications.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "cordova",
+    "battery"
+  ],
+  "main": "cordova-battery.html",
+  "license": "https://raw.githubusercontent.com/adelarosab/cordova-battery/master/LICENSE",
+  "homepage": "https://github.com/adelarosab/cordova-battery/",
+  "ignore": [
+    "/.*",
+    "/bower.json",
+    "/demo/",
+    "/index.html",
+    "/README.md",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "^1.6.0",
+    "cordova-core": "^1.1.5"
+  },
+  "devDependencies": {
+    "iron-component-page": "^1.1.7"
+  }
+}
