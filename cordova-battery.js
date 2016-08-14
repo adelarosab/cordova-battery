@@ -40,12 +40,12 @@ Polymer(
 
       window.addEventListener(
         'batterycritical',
-        this.fire.bind(this, 'cordova-batteory-critical', this.level),
+        this.fire.bind(this, 'cordova-battery-critical', this.level),
         false
       );
       window.addEventListener(
         'batterylow',
-        this.fire.bind(this, 'cordova-batteory-low', this.level),
+        this.fire.bind(this, 'cordova-battery-low', this.level),
         false
       );
       window.addEventListener(

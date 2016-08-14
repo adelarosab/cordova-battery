@@ -4,7 +4,7 @@
   "authors": [
     "Adrian de la Rosa <adrian@delarosab.me>"
   ],
-  "description": "An element providing access to battery status for cordova applications.",
+  "description": "An element providing information about the battery status.",
   "keywords": [
     "web-component",
     "web-components",
