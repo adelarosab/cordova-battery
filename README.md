@@ -2,9 +2,11 @@ _[Demo and API docs](https://adelarosab.github.io/cordova-battery)_
 ###### Note: 
 Due to restrictions `ready` attribute is not shown into attributes table.
 
+***
+***
 
 ## &lt;cordova-battery&gt;
-g
+
 `<cordova-battery>` provides information about the battery status.
 
 ```html
@@ -14,6 +16,9 @@ g
     ready
 ></cordova-battery>
 ```
+
+---
+
 ### Attributes
  
 #### is-plugged (read-only)
@@ -25,6 +30,7 @@ The percentage of battery charge (0-100)
 #### ready (read-only)
 Return if cordova deviceready event has been fired.
 
+---
 
 ### Events
 
