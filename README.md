@@ -1,27 +1,21 @@
 _[Demo and API docs](https://adelarosab.github.io/cordova-battery)_
-###### Note: 
-Due to restrictions `ready` attribute is not shown into attributes table.
 
-***
-***
+### &lt;cordova-battery&gt;
+`<cordova-battery>` implements a basic interface about cordova application 
+status.
 
-## Installation
+### Installation
 In your `www` project:
-```
+```bash
 bower install --save cordova-battery
 ```
 
 In your `cordova` project:
-```
+```bash
 cordova plugin add cordova-plugin-battery-status
 ```
 
-***
-
-## &lt;cordova-battery&gt;
-
-`<cordova-battery>` provides information about the battery status.
-
+### Usage
 ```html
 <cordova-battery
     is-plugged
@@ -30,25 +24,11 @@ cordova plugin add cordova-plugin-battery-status
 ></cordova-battery>
 ```
 
----
-
-### Attributes
- 
-#### is-plugged (read-only)
-A boolean that indicates wheter the device is plugged in.
- 
-#### level (read-only)
-The percentage of battery charge (0-100)
-
-#### ready (read-only)
-Return if cordova deviceready event has been fired.
+`<cordova-battery>` provides an implementation of an old version of the 
+Battery Status Events API. `ready` means cordova is fully operative and 
+values of the element are readable.
 
 ---
 
-### Events
-
-#### cordova-battery-critical
-Fires when the battery charge percentage reaches the critical charge threshold.
-
-#### cordova-battery-low
-Fires when the battery charge percentage reaches the low charge threshold.
+###### Note
+Due to restrictions `ready` attribute is not shown into attributes table.

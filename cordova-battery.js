@@ -2,6 +2,22 @@ Polymer(
   {
     is: 'cordova-battery',
 
+    /**
+     * Fired when the battery charge percentage reaches the critical charge
+     * threshold.
+     *
+     * @event critical
+     * @event cordova-battery-critical
+     */
+
+    /**
+     * Fired when the battery charge percentage reaches the low charge
+     * threshold.
+     *
+     * @event low
+     * @event cordova-battery-low
+     */
+
     properties: {
       /**
        * A boolean that indicates wheter the device is plugged in.
@@ -37,12 +53,12 @@ Polymer(
       if (ready) {
         window.addEventListener(
           'batterycritical',
-          this.fire.bind(this, 'cordova-battery-critical', this.level),
+          this._onCritical.bind(this),
           false
         );
         window.addEventListener(
           'batterylow',
-          this.fire.bind(this, 'cordova-battery-low', this.level),
+          this._onLow.bind(this),
           false
         );
         window.addEventListener(
@@ -53,14 +69,24 @@ Polymer(
       }
     },
 
+    _onCritical() {
+      this.fire('critical', this.level);
+      this.fire('cordova-battery-critical', this.level);
+    },
+
+    _onLow() {
+      this.fire('low', this.level);
+      this.fire('cordova-battery-low', this.level);
+    },
+
     _onStatusChanged(status) {
       this._setIsPlugged(status.isPlugged);
       this._setLevel(status.level);
     },
 
     detached() {
-      window.removeEventListener('batterycritical', this.fire);
-      window.removeEventListener('batterylow', this.fire);
+      window.remogveEventListener('batterycritical', this._onCritical);
+      window.removeEventListener('batterylow', this._onLow);
       window.removeEventListener('batterystatus', this._onStatusChanged);
     }
   }
