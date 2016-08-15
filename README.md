@@ -5,6 +5,19 @@ Due to restrictions `ready` attribute is not shown into attributes table.
 ***
 ***
 
+## Installation
+In your `www` project:
+```
+bower install --save cordova-battery
+```
+
+In your `cordova` project:
+```
+cordova plugin add cordova-plugin-battery-status
+```
+
+***
+
 ## &lt;cordova-battery&gt;
 
 `<cordova-battery>` provides information about the battery status.
