@@ -1,6 +1,6 @@
 {
   "name": "cordova-battery",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "authors": [
     "Adrian de la Rosa <adrian@delarosab.me>"
   ],
@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "polymer": "^1.6.1",
-    "cordova-core": "^1.1.5"
+    "cordova-core": "^1.2.0"
   },
   "devDependencies": {
     "iron-component-page": "^1.1.7"
