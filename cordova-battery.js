@@ -18,6 +18,10 @@ Polymer(
      * @event cordova-battery-low
      */
 
+    hostAttributes: {
+      hidden: true
+    },
+
     properties: {
       /**
        * A boolean that indicates wheter the device is plugged in.
