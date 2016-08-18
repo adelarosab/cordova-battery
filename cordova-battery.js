@@ -53,6 +53,10 @@ Polymer(
       }
     },
 
+    _computeReady(ready, paused) {
+      return ready && !paused;
+    },
+
     _observeReady(ready) {
       if (ready) {
         window.addEventListener(
